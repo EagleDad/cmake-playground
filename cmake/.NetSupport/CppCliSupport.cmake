@@ -1,3 +1,7 @@
+
+# C++/CLI only supports C++ 17
+set(CMAKE_CXX_STANDARD 17)
+
 ######################################################################
 #
 # add_cpp_cli_library
@@ -76,9 +80,6 @@ function(add_cpp_cli_executable)
         )
 
     endif()
-    
-
-
     
 endfunction(add_cpp_cli_executable)
 ######################################################################

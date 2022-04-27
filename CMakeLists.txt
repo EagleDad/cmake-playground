@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.11)
 
 # Configure C++
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release")
 
@@ -56,7 +56,6 @@ endif()
 include(FindPackageHandleStandardArgs) 
 include(GenerateExportHeader)
 
-
 # Modules
 include(Common)
 include(CompilerFlags)
@@ -75,9 +74,6 @@ if(BUILD_TESTING)
     enable_testing()
     include(GoogleTest)
 endif(BUILD_TESTING)
-
-
-
 
 
 if(BUILD_DOC)

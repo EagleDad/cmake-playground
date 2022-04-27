@@ -1,9 +1,11 @@
 
-set(DOT_NET_VERSION "v4.7.2" CACHE STRING "The .NET version to use for the projects")
-set_property(CACHE DOT_NET_VERSION PROPERTY STRINGS v4.8 v4.7.2 v4.6.2 v4.6.1 )
+if ( MSVC )
+	set(DOT_NET_VERSION "v4.7.2" CACHE STRING "The .NET version to use for the projects")
+	set_property(CACHE DOT_NET_VERSION PROPERTY STRINGS v4.8 v4.7.2 v4.6.2 v4.6.1 )
 
-include(CppCliSupport)
-include(CSharpUtilities)
+	include(CppCliSupport)
+	include(CSharpUtilities)
+endif ( MSVC )
 
 ######################################################################
 #

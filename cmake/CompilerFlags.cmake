@@ -39,6 +39,7 @@ function( set_compiler_flags )
         )
     endif()
 
+	# TODO: USE CXX_FLAGS
     add_definitions( ${compile_flags} )
 
     add_compile_definitions(
