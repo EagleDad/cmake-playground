@@ -3,7 +3,6 @@ set(DOT_NET_VERSION "v4.7.2" CACHE STRING "The .NET version to use for the proje
 set_property(CACHE DOT_NET_VERSION PROPERTY STRINGS v4.8 v4.7.2 v4.6.2 v4.6.1 )
 
 include(CppCliSupport)
-include(WpfSupport)
 include(CSharpUtilities)
 
 ######################################################################

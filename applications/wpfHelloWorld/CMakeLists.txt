@@ -3,7 +3,7 @@ project(WpfHelloWorld VERSION 0.1.0 LANGUAGES CSharp)
 
 set(EXECUTABLE_NAME "wpfhelloworld")
 
-include(DotNetSupport)
+include(WpfSupport)
 
 add_wpf_executable(
     TARGET
