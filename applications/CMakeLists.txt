@@ -17,5 +17,6 @@ if(BUILD_WITH_ZIP)
     add_subdirectory( zipHelloWorld )
 endif(BUILD_WITH_ZIP)
 
+add_subdirectory( cppCliHelloWorld )
 add_subdirectory( helloWorld )
 add_subdirectory( wpfHelloWorld )

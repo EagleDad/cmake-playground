@@ -1,8 +1,3 @@
-include(CSharpUtilities)
-
-set(DOT_NET_VERSION "v4.8" CACHE STRING "The .NET version to use for the projects")
-set_property(CACHE DOT_NET_VERSION PROPERTY STRINGS v4.8 v4.6.1 v4.6.2)
-
 set(WPF_REQIRED_XAML_SOURCE_FILES "")
 set(WPF_REQIRED_CONFIG_FILES "")
 set(WPF_REQIRED_PROPERTY_FILES "")
@@ -95,13 +90,13 @@ set(WPF_REQIRED_PROPERTY_FILES ${WPF_REQIRED_PROPERTY_FILES} Properties/Settings
 
 
 #################################
-function(add_csharp_executable)
+function(add_wpf_executable)
 
     cmake_parse_arguments(
         pargs 
         ""
         "TARGET"
-        "SOURCES;XAML_SOURCES"
+        "SOURCES;XAML_SOURCES;DOT_NET_REFERENCES"
         ${ARGN}
     )
     
@@ -110,11 +105,6 @@ function(add_csharp_executable)
     endif()
     
     set(WPF_REQIRED_XAML_SOURCE_FILES ${WPF_REQIRED_XAML_SOURCE_FILES} ${pargs_XAML_SOURCES})
-    
-    message(STATUS "Target: ${pargs_TARGET}")
-    message(STATUS "SOURCES: ${pargs_SOURCES}")
-    message(STATUS "XAML_SOURCES: ${pargs_XAML_SOURCES}")
-    message(STATUS "WPF_REQIRED_XAML_SOURCE_FILES: ${WPF_REQIRED_XAML_SOURCE_FILES}")
     
     add_executable(${pargs_TARGET}
 
@@ -164,19 +154,8 @@ function(add_csharp_executable)
             ${pargs_TARGET} 
             
         PROPERTY VS_DOTNET_REFERENCES
-            "Microsoft.CSharp"
-            "PresentationCore"
-            "PresentationFramework"
-            "System"
-            "System.Core"
-            "System.Data"
-            "System.Data.DataSetExtensions"
-            "System.Net.Http"
-            "System.Xaml"
-            "System.Xml"
-            "System.Xml.Linq"
-            "WindowsBase"
+            ${pargs_DOT_NET_REFERENCES}
     )
 
 
-endfunction(add_csharp_executable)
+endfunction(add_wpf_executable)
