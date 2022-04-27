@@ -1,0 +1,12 @@
+image-processing-core license agreement
+
+(c) by BUCHER emhard glass.
+This product is protected by copyright law and international treaties.
+
+
+image-processing-core uses several libraries. This document lists all the used libraries and
+their respective license agreement.
+
+********************************************************************************************************************
+
+CMAKE_GENERATOR for licences
