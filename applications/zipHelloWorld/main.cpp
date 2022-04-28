@@ -31,16 +31,8 @@ int main( int argc, char** argv )
     std::ignore = argc;
     std::ignore = argv;
 
-    //std::string basePath =
-    //    "C:/Users/dirk.adler/data/Dotcode/WorkingBadly/Dotcode_DavidLorand";
-    /*std::string basePath =
-        "C:/Users/dirk.adler/data/Dotcode/WorkingBadly/Dotcode_Sichuan_March_2021";*/
-     std::string basePath =
-         "C:/Users/dirk.adler/data/Dotcode/WorkingBadly/Dotcode_DavidLorand2";
-
-    //std::string outPath = "C:/TEMP/Dotcode_DavidLorand";
-    //std::string outPath = "C:/TEMP/Dotcode_Sichuan_March_2021";
-     std::string outPath = "C:/TEMP/Dotcode_DavidLorand2";
+    std::string basePath = "";
+    std::string outPath = "C:/TEMP/";
 
     try
     {
@@ -70,7 +62,6 @@ int main( int argc, char** argv )
             curName << outPath << "/Image_" << std::setw( 3 )
                     << std::setfill( '0' ) << imageIdx++ << ".bmp";
 
-            //std::cout << curName.str() << std::endl;
 
             if ( zip_entry_open( zip, "Picture Base_000.bmp" ) == 0 )
             {
@@ -80,33 +71,7 @@ int main( int argc, char** argv )
 
             zip_close( zip );
         }
-        ////auto zip = zip_open( zipFileName.c_str( ), 0, 'r' );
-
-        // if ( zip )
-        //{
-        // const int n = zip_entries_total( zip );
-
-        // for ( int i = 0; i < n; ++i )
-        //{
-        //     zip_entry_openbyindex( zip, i );
-        //     {
-        //         const char* name = zip_entry_name( zip );
-        //         std::cout << "Entry: " << name << std::endl;
-        //         //int isdir = zip_entry_isdir( zip );
-        //         //unsigned long long size = zip_entry_size( zip );
-        //         //unsigned int crc32 = zip_entry_crc32( zip );
-        //     }
-        //     zip_entry_close( zip );
-        // }
-
-        //    std::cout << "VALID ZIP" << std::endl;
-        //    if ( zip_entry_open( zip, "Picture Base_000.bmp" ) == 0 )
-        //    {
-        //        std::cout << "FOUND IMAGE" << std::endl;
-        //        zip_entry_fread( zip, "C:\\Temp\\Picture Base_000_.bmp" );
-        //    }
-        //}
-        // std::cout << "STOP" << std::endl;
+        
         return 0;
     }
     catch ( std::exception& e )
