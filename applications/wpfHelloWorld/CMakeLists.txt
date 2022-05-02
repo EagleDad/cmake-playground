@@ -3,17 +3,19 @@ project(WpfHelloWorld VERSION 0.1.0 LANGUAGES CSharp)
 
 set(EXECUTABLE_NAME "wpfhelloworld")
 
-include(WpfSupport)
-
 add_wpf_executable(
     TARGET
         ${EXECUTABLE_NAME}
+        
+    CREATE_DEFAULT_FILES
     
     SOURCES
         src/MyTestClass.cs
         src/Person.cs
     
     XAML_SOURCES
+        
+    RESOURCES
      
     DOT_NET_REFERENCES
         "System"
@@ -24,16 +26,6 @@ add_wpf_executable(
         "PresentationCore"
         "PresentationFramework"
 )
-
-# Nuget needs to be installed
-# add_nuget_package(
-    # TARGET 
-        # ${EXECUTABLE_NAME}
-    # PACKAGE
-        # NUnit
-    # VERSION
-        # 3.13.3
-# )
 
 if(ENABLE_SOLUTION_FOLDERS)
     set_target_properties(${EXECUTABLE_NAME} PROPERTIES FOLDER "applications")

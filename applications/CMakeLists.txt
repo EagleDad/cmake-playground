@@ -18,9 +18,9 @@ if(BUILD_WITH_ZIP)
 endif(BUILD_WITH_ZIP)
 
 if ( MSVC )
-	# Add .NET only on Microsoft compiler
-	add_subdirectory( cppCliHelloWorld )
-	add_subdirectory( wpfHelloWorld )
+    # Add .NET only on Microsoft compiler
+    add_subdirectory( cppCliHelloWorld )
+    add_subdirectory( wpfHelloWorld )
 endif ( MSVC )
 
 add_subdirectory( helloWorld )

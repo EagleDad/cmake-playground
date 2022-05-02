@@ -25,7 +25,7 @@ namespace WpfHelloWorld
         {
             mMyTestClass = new MyTestClass("My New Name");
             InitializeComponent();
-            tbSettingText.Text = mMyTestClass.Name;
+            TbSettingText.Text = mMyTestClass.Name;
         }
     }
 }
