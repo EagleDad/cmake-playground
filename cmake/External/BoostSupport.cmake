@@ -36,6 +36,6 @@ set(Boost_INCLUDE_DIR "${FETCHCONTENT_BASE_DIR}/boost/src/boost")
 list(APPEND DEPENDENCIES boost)
 
 list(APPEND EXTRA_CMAKE_ARGS
-   -DBOOST_ROOT=${Boost_DIR}
-   -DBoost_NO_SYSTEM_PATHS=ON
+   -DBOOST_ROOT:string=${Boost_DIR}
+   -DBoost_NO_SYSTEM_PATHS:BOOL=ON
 )

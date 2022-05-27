@@ -20,6 +20,6 @@ set(pybind11_DIR "${FETCHCONTENT_BASE_DIR}/pybind11/pybind11-2.9.2/install/share
 message(STATUS "pybind11_DIR: ${pybind11_DIR}")
 
 list(APPEND EXTRA_CMAKE_ARGS
-  -Dpybind11_DIR=${pybind11_DIR}
+    -Dpybind11_DIR:string=${pybind11_DIR}
 )
 

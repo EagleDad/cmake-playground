@@ -37,5 +37,5 @@ list(APPEND DEPENDENCIES opencv)
 set(OpenCV_DIR "${FETCHCONTENT_BASE_DIR}/opencv/opencv-4.5.5/install")
 
 list(APPEND EXTRA_CMAKE_ARGS
-   -DOpenCV_DIR=${OpenCV_DIR}
+      -DOpenCV_DIR:string=${OpenCV_DIR}
 )

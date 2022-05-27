@@ -5,8 +5,6 @@ set(CMAKE_CXX_STANDARD 20)
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release")
 
-# Project names are only relevant for humans, camel case is OK
-
 set(COPYRIGHT_YEAR_START 2022)
 
 list(APPEND CMAKE_MODULE_PATH

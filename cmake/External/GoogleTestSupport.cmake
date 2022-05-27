@@ -30,7 +30,7 @@ list(APPEND DEPENDENCIES googletest)
 set(GTest_DIR "${FETCHCONTENT_BASE_DIR}/googletest/googletest-1.10.0/install/lib/cmake/GTest")
 
 list(APPEND EXTRA_CMAKE_ARGS
-   -DGTest_DIR=${GTest_DIR}
+    -DGTest_DIR:string=${GTest_DIR}
 )
 
 
