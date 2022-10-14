@@ -17,6 +17,10 @@ if(BUILD_WITH_ZIP)
     add_subdirectory( zipHelloWorld )
 endif(BUILD_WITH_ZIP)
 
+if(BUILD_WITH_CLIPPER)
+    add_subdirectory(clipper2HelloWorld)
+endif()
+
 if ( MSVC )
     # Add .NET only on Microsoft compiler
     add_subdirectory( cppCliHelloWorld )

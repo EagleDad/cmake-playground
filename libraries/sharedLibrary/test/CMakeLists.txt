@@ -1,26 +1,20 @@
-project(SharedLibraryTest)
 
-find_package(GTest REQUIRED)
+set(EXECUTABLE_NAME "test_haredLibraryTest")
 
-set_compiler_flags(THIRD_PARTY)
+add_gtest_executable(
+    TARGET
+        ${EXECUTABLE_NAME}
 
-set(EXECUTABLE_NAME "test_sharedLibrary")
+    HEADERS
 
-add_executable(test_sharedLibrary
-    src/test_string.cpp
-)
+    SOURCES
+        src/test_string.cpp
 
-# Write own function to add test and do grouping there
-if(ENABLE_SOLUTION_FOLDERS)
-    set_target_properties(${EXECUTABLE_NAME} PROPERTIES FOLDER "tests")
-endif()
-
-target_link_libraries(${EXECUTABLE_NAME}
-    PRIVATE
-        GTest::GTest
-        GTest::Main
-        GTest::gmock
+    DEPENDENCIES
         MyProject::SharedLibrary
+
 )
 
-gtest_discover_tests(${EXECUTABLE_NAME})
+target_include_directories(${EXECUTABLE_NAME}
+    PUBLIC
+)

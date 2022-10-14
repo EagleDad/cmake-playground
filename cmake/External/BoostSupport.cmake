@@ -8,7 +8,6 @@ else()
   if( WIN32 )
     set( BOOST_BOOTSTRAP_CCOMMAND bootstrap.bat )
     set( BOOST_B2B_CCOMMAND ./b2 )
-    #set( BOOST_B2B_CCOMMAND b2.exe )
   endif()
 endif()
 
@@ -36,6 +35,6 @@ set(Boost_INCLUDE_DIR "${FETCHCONTENT_BASE_DIR}/boost/src/boost")
 list(APPEND DEPENDENCIES boost)
 
 list(APPEND EXTRA_CMAKE_ARGS
-   -DBOOST_ROOT:string=${Boost_DIR}
+   -DBOOST_ROOT:PATH=${Boost_DIR}
    -DBoost_NO_SYSTEM_PATHS:BOOL=ON
 )

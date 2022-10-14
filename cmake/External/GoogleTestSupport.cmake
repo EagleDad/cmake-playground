@@ -1,15 +1,5 @@
 
-#set_compiler_flags(THIRD_PARTY)
-
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-
-# set(FETCHCONTENT_QUIET ON)
-# FetchContent_Declare(
-   # googletest
-   # GIT_REPOSITORY      https://github.com/google/googletest.git
-   # GIT_TAG             release-1.10.0
-# )
-# FetchContent_MakeAvailable(googletest)
 
 ExternalProject_Add(
     googletest
@@ -30,9 +20,8 @@ list(APPEND DEPENDENCIES googletest)
 set(GTest_DIR "${FETCHCONTENT_BASE_DIR}/googletest/googletest-1.10.0/install/lib/cmake/GTest")
 
 list(APPEND EXTRA_CMAKE_ARGS
-    -DGTest_DIR:string=${GTest_DIR}
+    -DGTest_DIR:PATH=${GTest_DIR}
 )
-
 
 
 
