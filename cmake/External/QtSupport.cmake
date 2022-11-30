@@ -1,17 +1,5 @@
-
 set( PROJECT_VERSION "6.4.1")
 set( PROJECT_NAME "Qt")
-
-#cmake -E chdir C:\Users\dirk.adler\source\repos\image-processing-toolbox\build\_deps\Qt\Qt-6.4.1\build C:\Users\dirk.adler\source\repos\image-processing-toolbox\build\_deps\Qt\Qt-6.4.1\src\configure.bat -prefix C:\Users\dirk.adler\source\repos\image-processing-toolbox\build\_deps\Qt\Qt-6.4.1\install
-#..\configure -prefix C:\Users\dirk.adler\source\repos\image-processing-toolbox\build\_deps\Qt\Qt-6.4.1\install
-#cmake --build . --parallel
-
-#C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\Tools
-#VsDevCmd.bat  
-#VS140COMNTOOLS
-#   ${CMAKE_COMMAND} --build <BINARY_DIR> --config $<CONFIG>
-
-#cmake --build C:\Users\dirk.adler\source\repos\image-processing-toolbox\build\_deps\Qt\Qt-6.4.1\build --parallel
 
 MESSAGE(STATUS $ENV{VS140COMNTOOLS})
 
@@ -27,15 +15,9 @@ ExternalProject_Add(
     GIT_TAG             "v${PROJECT_VERSION}"
     SOURCE_DIR "${FETCHCONTENT_BASE_DIR}/${PROJECT_NAME}/${PROJECT_NAME}-${PROJECT_VERSION}/src/"
     SOURCE_SUBDIR ""
-    #BINARY_DIR "${FETCHCONTENT_BASE_DIR}/${PROJECT_NAME}/${PROJECT_NAME}-${PROJECT_VERSION}/build"
-    #INSTALL_DIR "${FETCHCONTENT_BASE_DIR}/${PROJECT_NAME}/${PROJECT_NAME}-${PROJECT_VERSION}/install"
     BINARY_DIR ""
     INSTALL_DIR ""
     CMAKE_ARGS ""
-    #-DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
-    #-DCMAKE_BUILD_TYPE=Release
-    #-DCMAKE_DEBUG_POSTFIX:STRING=-d
-    #CONFIGURE_COMMAND "mkdir ${FETCHCONTENT_BASE_DIR}/${PROJECT_NAME}/${PROJECT_NAME}-${PROJECT_VERSION}/build"
     CONFIGURE_COMMAND   ${CMAKE_COMMAND} -E echo "Creating build directory"
     COMMAND             ${CMAKE_COMMAND} -E make_directory ${buildDir}
     COMMAND             ${CMAKE_COMMAND} -E echo "Creating install directory"
