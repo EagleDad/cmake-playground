@@ -27,18 +27,20 @@ option(BUILD_WITH_EIGEN             "Build some libraries with eigen support" OF
 option(BUILD_WITH_BOOST             "Build some libraries with boost support" OFF)
 option(BUILD_WITH_OPENCV            "Build some libraries with OpenCV support" OFF)
 option(BUILD_WITH_OPENCV_CONTRIB    "Build some libraries with OpenCV contrib support" OFF)
+option(BUILD_WITH_NLOHMAN_JSON      "Build some libraries with JSON support" OFF)
 option(BUILD_WITH_ZIP               "Build some libraries with Zip support" OFF)
+option(BUILD_WITH_QT                "Build some libraries with Qt support" OFF)
 
-option(DEBUG_POSTFIX            "Set to ON to force _d postfix for the lib names." OFF)
+option(DEBUG_POSTFIX                "Set to ON to force _d postfix for the lib names." OFF)
 
-option(ENABLE_SOLUTION_FOLDERS  "Solution folder in Visual Studio or in other IDEs" ON)
+option(ENABLE_SOLUTION_FOLDERS      "Solution folder in Visual Studio or in other IDEs" ON)
 
 option(STATIC_CODE_ANALYSIS         "Enables static code analysis with clang-tidy and CppCheck, if installed." OFF)
 
 option(COVERAGE_ON                  "Enable code coverage" OFF)
 
 # 3rd party dependencies needs to be build first
-option (USE_SUPERBUILD "Whether or not a superbuild should be invoked" ON)
+option (USE_SUPERBUILD              "Whether or not a superbuild should be invoked" ON)
 
 # Build type
 set(BUILD_TYPE "Engineering" CACHE STRING "The build type to use for the projects")
@@ -93,6 +95,7 @@ add_custom_target(ALL
     SOURCES 
         .clang-format
         .editorconfig
+        .clang-tidy
 )
 
 set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install" CACHE PATH "Installation Directory" FORCE)
